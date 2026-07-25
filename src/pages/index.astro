@@ -1,17 +1,322 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import TopNav from "../components/TopNav.astro";
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+import Badge from "../components/Badge.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Diaz Leonata - Portfolio">
+    <TopNav name="Diaz Leonata">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <Button variant="secondary" href="mailto:contact@example.com"
+            >Get in touch</Button
+        >
+    </TopNav>
+
+    <main class="container">
+        <section id="about" class="hero">
+            <Badge variant="default">Available for work</Badge>
+            <h1 class="display-xl hero-title">
+                Computer Science student crafting digital experiences.
+            </h1>
+            <p class="subhead hero-subtitle">
+                Hi, I'm Diaz Leonata. I enjoy building products, setting up
+                Linux environments, and designing intuitive interfaces.
+            </p>
+            <div class="hero-ctas">
+                <Button variant="primary" href="#projects">View Projects</Button
+                >
+                <Button variant="secondary" href="#skills">My Interests</Button>
+            </div>
+        </section>
+
+        <section id="skills" class="section-skills">
+            <h2 class="display-lg section-title">Interests & Skills</h2>
+
+            <div class="skills-grid">
+                <Card class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3 class="card-title">Product Engineering</h3>
+                    <p class="body-sm text-muted">
+                        Building robust applications and websites, turning ideas
+                        into functional digital products.
+                    </p>
+                </Card>
+
+                <Card class="skill-card">
+                    <div class="skill-icon">✨</div>
+                    <h3 class="card-title">UI/UX Design</h3>
+                    <p class="body-sm text-muted">
+                        Crafting intuitive and aesthetically pleasing user
+                        interfaces that deliver exceptional user experiences.
+                    </p>
+                </Card>
+
+                <Card class="skill-card">
+                    <div class="skill-icon">🐧</div>
+                    <h3 class="card-title">Linux Administration</h3>
+                    <p class="body-sm text-muted">
+                        Passionate about configuring and optimizing Linux
+                        environments for both desktop and server setups.
+                    </p>
+                </Card>
+
+                <Card class="skill-card">
+                    <div class="skill-icon">📸</div>
+                    <h3 class="card-title">Media & Creative</h3>
+                    <p class="body-sm text-muted">
+                        Capturing moments through photography and videography,
+                        along with post-production editing.
+                    </p>
+                </Card>
+
+                <Card class="skill-card">
+                    <div class="skill-icon">🎵</div>
+                    <h3 class="card-title">Music Production</h3>
+                    <p class="body-sm text-muted">
+                        Avid music listener and learner, currently exploring
+                        beat-making and production using FL Studio.
+                    </p>
+                </Card>
+
+                <Card class="skill-card">
+                    <div class="skill-icon">🎮</div>
+                    <h3 class="card-title">Game Dev & 3D</h3>
+                    <p class="body-sm text-muted">
+                        Learning to create immersive games using Godot and
+                        Unreal Engine, supplemented by 3D modeling in Blender.
+                    </p>
+                </Card>
+            </div>
+        </section>
+
+        <section id="projects" class="section-projects">
+            <h2 class="display-lg section-title">Selected Projects</h2>
+
+            <div class="product-screenshot-card">
+                <div class="screenshot-header">
+                    <Badge variant="success">Active</Badge>
+                    <span class="eyebrow screenshot-title">Project Name</span>
+                </div>
+                <div class="screenshot-body">
+                    <div class="mock-ui">
+                        <p class="body-sm text-muted">
+                            A mockup representation of a product interface goes
+                            here. This panel is meant to showcase high-fidelity
+                            captures of the product UI.
+                        </p>
+                        <br />
+                        <div class="mock-code">
+                            <code>$ pnpm install &amp;&amp; pnpm dev</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-text">Diaz Leonata</span>
+                <p class="caption text-subtle">
+                    © {new Date().getFullYear()} Diaz Leonata. All rights reserved.
+                </p>
+            </div>
+            <div class="footer-links">
+                <a href="#" class="caption text-subtle hover-white">Twitter</a>
+                <a href="#" class="caption text-subtle hover-white">GitHub</a>
+                <a href="#" class="caption text-subtle hover-white">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</Layout>
+
+<style>
+    .nav-link {
+        color: var(--color-ink-subtle);
+        transition: color 0.2s;
+    }
+    .nav-link:hover {
+        color: var(--color-ink);
+    }
+
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-lg);
+    }
+
+    .hero {
+        padding: calc(var(--spacing-section) * 1.5) 0 var(--spacing-section);
+        max-width: 850px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-lg);
+    }
+
+    .hero-title {
+        color: var(--color-ink);
+    }
+
+    .hero-subtitle {
+        color: var(--color-ink-muted);
+        max-width: 600px;
+    }
+
+    .hero-ctas {
+        display: flex;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-md);
+    }
+
+    .section-title {
+        margin-bottom: var(--spacing-xxl);
+    }
+
+    .section-skills {
+        padding: var(--spacing-section) 0;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    @media (max-width: 1024px) {
+        .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+        .hero-title {
+            font-size: 56px;
+            letter-spacing: -1.8px;
+        }
+    }
+
+    .skill-card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .skill-icon {
+        font-size: 32px;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .card-title {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 1.25;
+        letter-spacing: -0.4px;
+    }
+
+    .text-muted {
+        color: var(--color-ink-muted);
+    }
+
+    .section-projects {
+        padding: var(--spacing-section) 0 calc(var(--spacing-section) * 1.5);
+    }
+
+    .product-screenshot-card {
+        background-color: var(--color-surface-1);
+        border: 1px solid var(--color-hairline);
+        border-radius: var(--rounded-xl);
+        padding: var(--spacing-lg);
+        overflow: hidden;
+    }
+
+    .screenshot-header {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+        border-bottom: 1px solid var(--color-hairline);
+        padding-bottom: var(--spacing-md);
+    }
+
+    .screenshot-title {
+        color: var(--color-ink-muted);
+    }
+
+    .mock-ui {
+        background-color: var(--color-canvas);
+        border: 1px solid var(--color-hairline-strong);
+        border-radius: var(--rounded-lg);
+        padding: var(--spacing-xxl);
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mock-code {
+        background-color: var(--color-surface-2);
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: var(--rounded-md);
+        font-family: var(--font-mono);
+        font-size: 13px;
+        color: var(--color-primary);
+    }
+
+    .footer {
+        background-color: var(--color-canvas);
+        padding: 64px 32px;
+        border-top: 1px solid var(--color-hairline);
+    }
+
+    .footer-content {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .logo-text {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--color-ink);
+        display: block;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .text-subtle {
+        color: var(--color-ink-subtle);
+    }
+
+    .footer-links {
+        display: flex;
+        gap: var(--spacing-lg);
+    }
+
+    .hover-white {
+        transition: color 0.2s;
+    }
+    .hover-white:hover {
+        color: var(--color-ink);
+    }
+
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            gap: var(--spacing-xl);
+        }
+    }
+</style>
