@@ -27,8 +27,7 @@ import Badge from "../components/Badge.astro";
                 Linux environments, and designing intuitive interfaces.
             </p>
             <div class="hero-ctas">
-                <Button variant="primary" href="#github">View GitHub</Button
-                >
+                <Button variant="primary" href="#github">View GitHub</Button>
                 <Button variant="secondary" href="#skills">My Interests</Button>
             </div>
         </section>
@@ -96,21 +95,31 @@ import Badge from "../components/Badge.astro";
         <section id="github" class="section-projects">
             <h2 class="display-lg section-title">GitHub Activity</h2>
             <p class="body-lg text-muted section-desc">
-                A look at my open-source contributions and the languages I write code in.
+                A look at my open-source contributions and the languages I write
+                code in.
             </p>
 
             <div class="github-grid">
                 <div class="product-screenshot-card">
                     <div class="screenshot-header">
                         <Badge variant="success">Stats</Badge>
-                        <a href="https://github.com/wenyhtt" target="_blank" class="eyebrow screenshot-title hover-link">@wenyhtt</a>
+                        <a
+                            href="https://github.com/wenyhtt"
+                            target="_blank"
+                            class="eyebrow screenshot-title hover-link"
+                            >@wenyhtt</a
+                        >
                     </div>
                     <div class="screenshot-body">
                         <div class="mock-ui github-stats-container">
-                            <a href="https://github.com/wenyhtt" target="_blank" rel="noopener noreferrer">
-                                <img 
-                                    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=wenyhtt&theme=github_dark" 
-                                    alt="wenyhtt GitHub Stats" 
+                            <a
+                                href="https://github.com/wenyhtt"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=wenyhtt&theme=github_dark"
+                                    alt="wenyhtt GitHub Stats"
                                     class="github-stats-img"
                                 />
                             </a>
@@ -120,15 +129,21 @@ import Badge from "../components/Badge.astro";
 
                 <div class="product-screenshot-card">
                     <div class="screenshot-header">
-                        <Badge variant="primary">Languages</Badge>
-                        <span class="eyebrow screenshot-title">Top Languages</span>
+                        <Badge variant="success">Languages</Badge>
+                        <span class="eyebrow screenshot-title"
+                            >Top Languages</span
+                        >
                     </div>
                     <div class="screenshot-body">
                         <div class="mock-ui github-stats-container">
-                            <a href="https://github.com/wenyhtt" target="_blank" rel="noopener noreferrer">
-                                <img 
-                                    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=wenyhtt&theme=github_dark" 
-                                    alt="wenyhtt Top Languages" 
+                            <a
+                                href="https://github.com/wenyhtt"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=wenyhtt&theme=github_dark"
+                                    alt="wenyhtt Top Languages"
                                     class="github-stats-img"
                                 />
                             </a>
@@ -200,7 +215,7 @@ import Badge from "../components/Badge.astro";
             padding: var(--spacing-section) 0 calc(var(--spacing-section) * 0.5);
             text-align: left;
         }
-        
+
         .hero-ctas {
             flex-direction: column;
             width: 100%;
@@ -233,7 +248,7 @@ import Badge from "../components/Badge.astro";
         }
         .hero-title {
             font-size: 40px;
-            letter-spacing: -1.0px;
+            letter-spacing: -1px;
         }
         .section-title {
             font-size: 32px;
@@ -351,9 +366,11 @@ import Badge from "../components/Badge.astro";
         width: 100%;
         border-radius: var(--rounded-md);
         overflow: hidden;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
     }
-    
+
     .github-stats-container a:hover {
         transform: translateY(-4px);
         box-shadow: 0 12px 32px rgba(94, 106, 210, 0.15);
@@ -367,7 +384,7 @@ import Badge from "../components/Badge.astro";
     .hover-link {
         transition: color 0.2s ease;
     }
-    
+
     .hover-link:hover {
         color: var(--color-ink);
     }
