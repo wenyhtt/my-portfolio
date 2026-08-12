@@ -11,11 +11,31 @@ const { name } = Astro.props;
     <div class="logo">
       <a href="/">{name}</a>
     </div>
+    
+    <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="line line-1" d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path class="line line-2" d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path class="line line-3" d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
     <nav class="links">
       <slot />
     </nav>
   </div>
 </header>
+
+<script>
+  const btn = document.querySelector('.mobile-menu-btn');
+  const nav = document.querySelector('.links');
+
+  btn?.addEventListener('click', () => {
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', (!isExpanded).toString());
+    nav?.classList.toggle('is-open');
+  });
+</script>
 
 <style>
   .top-nav {
@@ -26,7 +46,7 @@ const { name } = Astro.props;
     border-bottom: 1px solid var(--color-hairline);
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 50;
   }
   
   .nav-content {
@@ -51,5 +71,71 @@ const { name } = Astro.props;
     gap: var(--spacing-lg);
     font-size: 14px;
     align-items: center;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--color-ink);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    z-index: 60;
+  }
+
+  /* Hamburger Animation */
+  .line {
+    transform-origin: center;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+  }
+
+  .mobile-menu-btn[aria-expanded="true"] .line-1 {
+    transform: translateY(6px) rotate(45deg);
+  }
+  .mobile-menu-btn[aria-expanded="true"] .line-2 {
+    opacity: 0;
+  }
+  .mobile-menu-btn[aria-expanded="true"] .line-3 {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  @media (max-width: 768px) {
+    .mobile-menu-btn {
+      display: flex;
+    }
+
+    .links {
+      position: fixed;
+      top: 56px; /* Below the nav */
+      left: 0;
+      right: 0;
+      background-color: var(--color-canvas);
+      border-bottom: 1px solid var(--color-hairline);
+      flex-direction: column;
+      padding: var(--spacing-lg);
+      gap: var(--spacing-md);
+      
+      /* Hidden state */
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+    
+    .links.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    /* Ensure the slot content stretches */
+    .links :global(> *) {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .links :global(.button) {
+      margin-top: var(--spacing-sm);
+    }
   }
 </style>
