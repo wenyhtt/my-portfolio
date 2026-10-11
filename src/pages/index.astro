@@ -8,27 +8,36 @@ import Badge from "../components/Badge.astro";
 
 <Layout title="Diaz Leonata - Portfolio">
     <TopNav name="Diaz Leonata">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#github" class="nav-link">GitHub</a>
-        <Button variant="secondary" href="mailto:leonatadiaz@icloud.com"
-            >Get in touch</Button
-        >
+        <a href="#about" class="nav-link">
+            About
+        </a>
+        <a href="#skills" class="nav-link">
+            Skills
+        </a>
+        <a href="#github" class="nav-link">
+            GitHub
+        </a>
+        <Button variant="secondary" href="mailto:leonatadiaz@icloud.com">
+            Get in touch
+        </Button>
     </TopNav>
 
     <main class="container">
         <section id="about" class="hero">
-            <Badge variant="default">Available for work</Badge>
             <h1 class="display-xl hero-title">
-                Computer Science student crafting digital experiences.
+                Tech Enthusiast crafting digital products.
             </h1>
             <p class="subhead hero-subtitle">
-                Hi, I'm Diaz Leonata. I enjoy building products, setting up
-                Linux environments, and designing intuitive interfaces.
+                Hi, I'm Diaz. I enjoy from desiging to building products,
+                setting up Linux environments, and learn new things.
             </p>
             <div class="hero-ctas">
-                <Button variant="primary" href="#github">View GitHub</Button>
-                <Button variant="secondary" href="#skills">My Interests</Button>
+                <Button variant="primary" href="#github">
+                    View GitHub
+                </Button>
+                <Button variant="secondary" href="#skills">
+                    My Interests
+                </Button>
             </div>
         </section>
 
@@ -40,8 +49,8 @@ import Badge from "../components/Badge.astro";
                     <div class="skill-icon">💻</div>
                     <h3 class="card-title">Product Engineering</h3>
                     <p class="body-sm text-muted">
-                        Building robust applications and websites, turning ideas
-                        into functional digital products.
+                        Building applications and websites, turning ideas into
+                        digital products.
                     </p>
                 </Card>
 
@@ -49,8 +58,8 @@ import Badge from "../components/Badge.astro";
                     <div class="skill-icon">✨</div>
                     <h3 class="card-title">UI/UX Design</h3>
                     <p class="body-sm text-muted">
-                        Crafting intuitive and aesthetically pleasing user
-                        interfaces that deliver exceptional user experiences.
+                        Crafting intuitive user interfaces that deliver comfy
+                        user experiences.
                     </p>
                 </Card>
 
@@ -65,7 +74,7 @@ import Badge from "../components/Badge.astro";
 
                 <Card class="skill-card">
                     <div class="skill-icon">📸</div>
-                    <h3 class="card-title">Media & Creative</h3>
+                    <h3 class="card-title">Digital Creative Arts</h3>
                     <p class="body-sm text-muted">
                         Capturing moments through photography and videography,
                         along with post-production editing.
@@ -76,17 +85,18 @@ import Badge from "../components/Badge.astro";
                     <div class="skill-icon">🎵</div>
                     <h3 class="card-title">Music Production</h3>
                     <p class="body-sm text-muted">
-                        Avid music listener and learner, currently exploring
-                        beat-making and production using FL Studio.
+                        Music listener and learner, currently exploring
+                        beat-making and production using Logic Pro.
                     </p>
                 </Card>
 
                 <Card class="skill-card">
                     <div class="skill-icon">🎮</div>
-                    <h3 class="card-title">Game Dev & 3D</h3>
+                    <h3 class="card-title">Game Dev</h3>
                     <p class="body-sm text-muted">
-                        Learning to create immersive games using Godot and
-                        Unreal Engine, supplemented by 3D modeling in Blender.
+                        Learning to create memorable games using Godot (I've
+                        learn Unity and Unreal too). Using Blender for 3D
+                        designing.
                     </p>
                 </Card>
             </div>
@@ -107,8 +117,9 @@ import Badge from "../components/Badge.astro";
                             href="https://github.com/wenyhtt"
                             target="_blank"
                             class="eyebrow screenshot-title hover-link"
-                            >@wenyhtt</a
                         >
+                            @wenyhtt
+                        </a>
                     </div>
                     <div class="screenshot-body">
                         <div class="mock-ui github-stats-container">
@@ -130,9 +141,9 @@ import Badge from "../components/Badge.astro";
                 <div class="product-screenshot-card">
                     <div class="screenshot-header">
                         <Badge variant="success">Languages</Badge>
-                        <span class="eyebrow screenshot-title"
-                            >Top Languages</span
-                        >
+                        <span class="eyebrow screenshot-title">
+                            Top Languages
+                        </span>
                     </div>
                     <div class="screenshot-body">
                         <div class="mock-ui github-stats-container">
@@ -159,13 +170,23 @@ import Badge from "../components/Badge.astro";
             <div class="footer-brand">
                 <span class="logo-text">Diaz Leonata</span>
                 <p class="caption text-subtle">
-                    © {new Date().getFullYear()} Diaz Leonata. All rights reserved.
+                    © {new Date().getFullYear()} Diaz Leonata. All rights
+                    reserved.
                 </p>
             </div>
             <div class="footer-links">
-                <a href="#" class="caption text-subtle hover-white">Twitter</a>
-                <a href="#" class="caption text-subtle hover-white">GitHub</a>
-                <a href="#" class="caption text-subtle hover-white">LinkedIn</a>
+                <a
+                    href="https://github.com/wenyhtt"
+                    class="caption text-subtle hover-white"
+                >
+                    GitHub
+                </a>
+                <a
+                    href="https://instagram.com/leonatadiaz"
+                    class="caption text-subtle hover-white"
+                >
+                    Instagram
+                </a>
             </div>
         </div>
     </footer>
@@ -373,7 +394,6 @@ import Badge from "../components/Badge.astro";
 
     .github-stats-container a:hover {
         transform: translateY(-4px);
-        box-shadow: 0 12px 32px rgba(94, 106, 210, 0.15);
     }
 
     .github-stats-img {
